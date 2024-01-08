@@ -1,5 +1,5 @@
 # 26. Remove Duplicates from Sorted Array
-# Solution 1 (two pointers):
+# Solution 1 (three pointers):
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         left = 0
@@ -14,7 +14,7 @@ class Solution:
                 right += 1
                 k += 1
         return k
-# Solution 2 (one pointer):
+# Solution 2 (two pointer):
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         left = 1
