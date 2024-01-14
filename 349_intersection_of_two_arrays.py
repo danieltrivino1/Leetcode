@@ -1,5 +1,5 @@
 # 349. Intersection of Two Arrays
-# Solution (two pointers):
+# Solution 1 (two pointers):
 class Solution:
     def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
         result = set()
@@ -20,4 +20,7 @@ class Solution:
             left_2 += 1
         result = list(result)
         return result
-      
+# Solution 2:
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+       return list((set(nums1) & set(nums2)))
