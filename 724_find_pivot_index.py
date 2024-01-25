@@ -1,3 +1,5 @@
+# 724. Find Pivot Index
+# Solution 1:
 class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         sum_left = [0]
@@ -30,4 +32,17 @@ class Solution:
             if sum_left[i] - sum_right[i] == 0:
                 return i
         
+        return -1
+
+# Solution 2:
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        sum_left = 0
+        sum_right = sum(nums)
+        for idx, element in enumerate(nums):
+            sum_right -= element
+            if sum_left == sum_right:
+                return idx
+            else:
+                sum_left += element
         return -1
