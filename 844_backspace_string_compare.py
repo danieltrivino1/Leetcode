@@ -1,5 +1,5 @@
 # 844. Backspace String Compare
-# Solution (stack):
+# Solution 1 (stack):
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
         stack_s = []
@@ -18,3 +18,16 @@ class Solution:
                 stack_t.append(letter_t)
         
         return stack_s == stack_t
+
+# Solution 2 (stack):
+class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        def build_stack(string):
+            stack = []
+            for letter in string:
+                if letter != '#':
+                    stack.append(letter)
+                elif stack:
+                    stack.pop()
+            return stack
+        return build_stack(s) == build_stack(t)
